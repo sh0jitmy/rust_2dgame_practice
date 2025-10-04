@@ -16,6 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install Wayland development packages
+      run: sudo apt-get update && sudo apt-get install -y libwayland-dev pkg-config
+    - name: Set PKG_CONFIG_PATH
+      run: echo "PKG_CONFIG_PATH=/path/to/wayland/lib/pkgconfig" >> $GITHUB_ENV   
     - name: Build
       run: | 
         cd bevy_game
