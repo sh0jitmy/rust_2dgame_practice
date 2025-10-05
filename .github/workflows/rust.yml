@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install Wayland development packages
-      run: sudo apt-get update && sudo apt-get install -y libwayland-dev pkg-config librust-alsa-sys-dev
+      run: sudo apt-get update && sudo apt-get install -y libwayland-dev pkg-config librust-alsa-sys-dev libusb-1.0-0-dev libftdi1-dev libudev-dev 
     - name: Set PKG_CONFIG_PATH
       run: echo "PKG_CONFIG_PATH=/path/to/wayland/lib/pkgconfig" >> $GITHUB_ENV   
     - name: Build
